@@ -97,7 +97,63 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+
+        while (self.can_move_right() == True):
+            self.swap_item()
+            # print("held item |", self._item)
+            # print("item at point in list] |", self._list[self._position])
+
+            while self.can_move_left() == True and self.light_is_on() == False:
+                self.move_left()
+                if self.compare_item() == -1:
+                    self.swap_item()
+            if self.compare_item() != None:
+                while self.compare_item() != None:
+                        self.move_right()
+                
+            
+            # print("self._position | ", self._position)
+            while self.can_move_right() == True:
+                # print("moving right")
+                self.move_right()
+                # print("self._position after moving right | ", self._position)
+                # print("held item |", self._item)
+                # print("item at point in list |", self._list[self._position])
+                # print("self.compare_item() |", self.compare_item())
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    # print("swapping items")
+            
+            # print("held item |", self._item)
+            # print("item at point in list |", self._list[self._position])
+            # print("self._position | ", self._position)
+            if self.compare_item() != None:
+                while self.compare_item() != None:
+                    self.move_left()
+                    # print("moving left")
+                    # print("self._position after moving left | ", self._position)
+                    # print("held item |", self._item)
+                    # print("item at point in list |", self._list[self._position])
+                
+
+            self.swap_item()
+
+            self.set_light_on()
+
+            # print("self._light | ",self._light)
+            
+            if self.can_move_right() == True:
+                self.move_right()   
+
+
+
+
+
+
+
+    
+
+        
 
 
 if __name__ == "__main__":
