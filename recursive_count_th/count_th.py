@@ -15,7 +15,6 @@ def count_th(word):
         if len(rest) >= 2:
             count += count_th(rest)
     if two_chars == "th":
-        count = count + 1
-        return count
+        count += 1
 
     return count
